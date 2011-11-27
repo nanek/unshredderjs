@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>unshredder.js example</title>
+    <script src="lib/unshredder.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        var slice_width = 32;
+        var img_width = 640;
+        var img_height = 359;
+
+        UNSHREDDER.init(slice_width, img_width, img_height);
+        UNSHREDDER.unshred('shredded', function(image) {
+          document.body.appendChild(image);
+        });
+
+      }, false);
+    </script>
+  </head>
+  <body>
+    <img id="shredded" src="images/TokyoPanoramaShredded.png" width='640' height='359'>
+  </body>
+</html>
